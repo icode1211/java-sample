@@ -1,6 +1,6 @@
 package chapter02.boxing;
 
-public class UnBoxingPerformanceExample {
+public class PrimitiveTypePerformanceExample {
     public static void main(String[] args) {
         long startTimeMs = System.currentTimeMillis();
         long sum = 0L;

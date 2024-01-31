@@ -4,12 +4,12 @@ public class Car {
     String company;
     int speed;
     String sw = "samsung";
-
     Sheet sheet;
 
+    String model;
+
     Car() {
-        company = "kia";
-        speed = 200;
+        this("kia", 200);
         sheet = new Sheet("default");
     }
 
@@ -19,8 +19,20 @@ public class Car {
         sheet = new Sheet("cool");
     }
 
+    void setSpeed(int speed) {
+        this.speed = speed;
+    }
+
+    void setModel(String model) {
+        this.model = model;
+    }
+
     void changeSoftware() {
         sw = "kakao";
+    }
+
+    int getSpeed() {
+        return speed;
     }
 
     void printSpec() {

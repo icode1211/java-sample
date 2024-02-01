@@ -1,12 +1,13 @@
 package chapter06.car;
 
 public class Car {
+    final int version = 1;
     String company;
     int speed;
     String sw = "samsung";
     Sheet sheet;
-
     String model;
+    boolean stop;
 
     Car() {
         this("kia", 200);
@@ -19,8 +20,24 @@ public class Car {
         sheet = new Sheet("cool");
     }
 
-    void setSpeed(int speed) {
-        this.speed = speed;
+    public boolean isStop() {
+        return stop;
+    }
+
+    public void setStop(boolean stop) {
+        this.stop = stop;
+    }
+
+    public String getModel() {
+        return version + "." + model;
+    }
+
+    public void setSpeed(int speed) {
+        if (speed < 0) {
+            this.speed = 0;
+        } else {
+            this.speed = speed;
+        }
     }
 
     void setModel(String model) {

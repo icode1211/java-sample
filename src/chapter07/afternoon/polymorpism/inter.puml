@@ -1,0 +1,11 @@
+@startuml
+'https://plantuml.com/class-diagram
+
+class Zookeeper
+
+interface Predator
+class Tiger implements Predator
+class Lion implements Predator
+
+
+@enduml

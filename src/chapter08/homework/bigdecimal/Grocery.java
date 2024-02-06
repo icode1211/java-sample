@@ -14,4 +14,9 @@ public class Grocery extends Product {
     public double getWeight() {
         return weight;
     }
+
+    @Override
+    public BigDecimal getDiscountAmount() {
+        return BigDecimal.valueOf(2000);
+    }
 }

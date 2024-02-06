@@ -12,4 +12,9 @@ public class Grocery extends Product {
     public double getWeight() {
         return weight;
     }
+
+    @Override
+    public int getDiscountAmount() {
+        return 2000;
+    }
 }

@@ -1,8 +1,6 @@
 package chapter08.homework.integer;
 
-import java.math.BigDecimal;
-
-public class Product {
+public class Product implements Promotion {
     String name;
     int price;
     double weight;
@@ -13,4 +11,16 @@ public class Product {
         this.weight = weight;
     }
 
+    public int getPrice() {
+        return price;
+    }
+
+    public double getWeight() {
+        return weight;
+    }
+
+    @Override
+    public int getDiscountAmount() {
+        return 0;
+    }
 }

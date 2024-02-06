@@ -14,4 +14,9 @@ public class Beauty extends Product {
     public double getWeight() {
         return weight;
     }
+
+    @Override
+    public BigDecimal getDiscountAmount() {
+        return BigDecimal.valueOf(10000);
+    }
 }

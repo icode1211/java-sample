@@ -1,16 +1,13 @@
 package chapter08.homework.integer;
 
-import chapter08.homework.integer.util.Calculator;
-
 public class OrderService {
     public static void main(String[] args) {
-        Beauty cosmetic = new Beauty("cosmetic", 12000, 1.59);
-        LargeAppliance tv = new LargeAppliance("tv", 35000, 10);
-        Grocery grocery = new Grocery("grocery", 10000, 0.3);
+        Product beauty = new Beauty("beauty", 30000, 2);
+        Product grocery = new Grocery("grocery", 20000, 3);
+        Product largeAppliance = new LargeAppliance("largeAppliance", 50000, 5);
 
-        Product[] products = {cosmetic, tv, grocery};
-        Cart cart = new Cart(products);
-        int deliveryCharge = Calculator.getDeliveryCharge(cart.getTotalWeight(), cart.getTotalPrice());
-        System.out.println("총 배송료: " + deliveryCharge);
+        Cart cart = new Cart(new Product[] {beauty, grocery, largeAppliance});
+        int totalDeliveryCharge = cart.calculateDeliveryCharge();
+        System.out.println(totalDeliveryCharge);    // 결과: 9000
     }
 }

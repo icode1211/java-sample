@@ -2,7 +2,7 @@ package chapter08.homework.bigdecimal;
 
 import java.math.BigDecimal;
 
-public class Product {
+public class Product implements Promotion {
     String name;
     BigDecimal price;
     double weight;
@@ -13,4 +13,8 @@ public class Product {
         this.weight = weight;
     }
 
+    @Override
+    public BigDecimal getDiscountAmount() {
+        return BigDecimal.ZERO;
+    }
 }

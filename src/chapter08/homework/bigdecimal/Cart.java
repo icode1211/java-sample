@@ -1,18 +1,21 @@
 package chapter08.homework.bigdecimal;
 
+import chapter08.homework.bigdecimal.util.Calculator;
+
 import java.math.BigDecimal;
 
 public class Cart {
-    private Product[] products;
+    final private Product[] products;
 
     public Cart(Product[] products) {
         this.products = products;
     }
 
-    public BigDecimal getTotalPrice() {
+    public BigDecimal getTotalPriceIncludeDiscount() {
         BigDecimal total = BigDecimal.ZERO;
         for (Product product : products) {
-            total = total.add(product.price);
+            BigDecimal price = product.price.subtract(product.getDiscountAmount());
+            total = total.add(price);
         }
         return total;
     }
@@ -23,5 +26,10 @@ public class Cart {
             weight += product.weight;
         }
         return weight;
+    }
+
+    public BigDecimal calculateDeliveryCharge() {
+        return Calculator.getDeliveryCharge(
+                getTotalWeight(), getTotalPriceIncludeDiscount());
     }
 }

@@ -2,9 +2,7 @@ package chapter12.example;
 
 public class FunctionalExample {
     public static void main(String[] args) {
-        MyFunctionalInterface f = () -> {
-            System.out.println("람다식");
-        };
+        MyFunctionalInterface f = () -> System.out.println("람다식");
         f.method();
 
         MyFunctionalInterface2 f2 = a -> {

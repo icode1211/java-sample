@@ -24,15 +24,15 @@ class SharedCounter {
             try {
                 // count가 0 이하이면 대기
                 wait();
+
+                // 다른 스레드에게 알림
+                notify();
             } catch (InterruptedException e) {
                 e.printStackTrace();
             }
         }
         count--;
         System.out.println("Decremented: " + count);
-
-        // 다른 스레드에게 알림
-        notify();
     }
 }
 
@@ -64,6 +64,11 @@ class DecrementThread extends Thread {
     }
 }
 
+/**
+ * 1. 현재 상태 그대로 main 돌려보고 결과 확인
+ * 2. SharedCounter 클래스의 increment(), decrement()
+ *      메소드의 synchronized 키워드 없애고 결과 확인
+ */
 public class MultiThreadExample {
     public static void main(String[] args) {
         SharedCounter sharedCounter = new SharedCounter();
